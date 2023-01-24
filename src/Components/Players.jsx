@@ -7,7 +7,12 @@ export default function Players() {
 
     let handleChange = (e) => {
         e.preventDefault();
-        setPlayersNumber(e.target.value);
+        if(e.target.value <= 7){
+            setPlayersNumber(e.target.value);
+        } else {
+            alert("Primer version: maximo 7 jugadores XD") 
+        }
+
     } 
 
     return (
