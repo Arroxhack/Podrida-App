@@ -13,8 +13,8 @@ export default function Game({playersNumber}) {
 
     return (
     <div className='flex flex-col space-y-6 mt-4'>
-        <p className='text-center text-3xl'>Score Board</p> 
-        <div className='flex p-2 text-lg border-4 border-red-700'>
+        <p className='text-center font-bold text-3xl'>Score Board</p> 
+        <div className='flex p-2 text-sm font-bold border-4 border-red-700'>
             {/* Rounds */}
             <div className='w-1/12'>
                 <Rounds playersNumber = {playersNumber}/>

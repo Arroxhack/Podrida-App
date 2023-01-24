@@ -12,7 +12,7 @@ export default function Players() {
 
     return (
     <div className='p-10 min-h-screen bg-blue-300 text-black'>
-        <label className='text-xl'>Number of Players: </label>
+        <label className='text-xl font-bold'>Number of Players: </label>
         <input 
         type="number"
         value={playersNumber}
