@@ -3,14 +3,16 @@ import Game from './Game';
 
 export default function Players() {
 
-    const [playersNumber, setPlayersNumber ] = useState(0);
-
+    const [playersNumber, setPlayersNumber ] = useState(1);
+    const [totalRounds, setTotalRounds ] = useState(1);
+    
     let handleChange = (e) => {
         e.preventDefault();
-        if(e.target.value <= 7){
-            setPlayersNumber(e.target.value);
+        if(e.target.value <= 7 && e.target.value > 0){
+            setPlayersNumber(Number(e.target.value));
+            setTotalRounds(Math.floor(52/e.target.value)*2 + Number(e.target.value))
         } else {
-            alert("Primer version: maximo 7 jugadores XD") 
+            alert("Primer version: Numero de jugadores entre 1 y 7 XD") 
         }
 
     } 
@@ -24,7 +26,7 @@ export default function Players() {
         onChange = {handleChange}
         className='w-12 border-2 border-black text-center'
         />
-    <Game playersNumber = {playersNumber}/>
+    <Game playersNumber = {playersNumber} totalRounds = {totalRounds}/>
     </div>
     )
 }

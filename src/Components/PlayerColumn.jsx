@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
-export default function PlayerColumn({playersNumber}) {
+export default function PlayerColumn({playersNumber, totalRounds}) {
 
   // console.log("Rounds: ", playersNumber);
 
     const [addPoints, setAddPoints] = useState(0);
     const [points, setPoints] = useState(0);
-
+    
     let handleChange = (e) => {
       e.preventDefault();
       setAddPoints(e.target.value);
@@ -17,9 +17,10 @@ export default function PlayerColumn({playersNumber}) {
       setPoints((points) => points + parseInt(addPoints));
       setAddPoints(0);
     }
+ 
 
     const rounds = [];
-    for(let i = 0; i < playersNumber*3; i++){
+    for(let i = 0; i < totalRounds; i++){
       rounds.push(
       <div className='flex justify-evenly h-6' key={i}>
         <form className='flex mx-2 space-x-2'>
@@ -38,11 +39,11 @@ export default function PlayerColumn({playersNumber}) {
       </div>)
     }
 
-    console.log("Rounds: ", rounds[0])
+    // console.log("Rounds: ", rounds[0])
 
 
   return (
-    <div className='flex flex-col p-2 space-y-4 text-center border-2 border-black'>
+    <div className='flex flex-col p-2 space-y-6 text-center border-2 border-black'>
       <div className='h-6'>
         <label>Name: </label>
         <input 

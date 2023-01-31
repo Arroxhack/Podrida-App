@@ -2,13 +2,13 @@ import React from 'react';
 import PlayerColumn from './PlayerColumn';
 import Rounds from './Rounds';
 
-export default function Game({playersNumber}) {
+export default function Game({playersNumber, totalRounds}) {
 
     // console.log("playersNumber: ", playersNumber);
 
     const playerColumns = [];
     for(let i = 0; i < playersNumber; i++){
-        playerColumns.push(<PlayerColumn playersNumber={playersNumber} key={i}/>)
+        playerColumns.push(<PlayerColumn playersNumber={playersNumber} totalRounds={totalRounds} key={i}/>)
     }
 
     return (
